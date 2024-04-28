@@ -12,6 +12,7 @@ const ProjectListing = ({ project }) => {
         description = description.substring(0, 90) + '...';
     }
 
+
     return (
         <div className="bg-warmBeige rounded-xl shadow-md relative">
             <div className="p-4">

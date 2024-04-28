@@ -1,8 +1,9 @@
 import React from 'react'
-import { useParams, useLoaderData, Link, useNavigate } from 'react-router-dom';
+import { useLoaderData, Link, } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
+import firebase from '../../firebaseConfig';
 
-const ProjectPage = ({ deleteJob }) => {
+const ProjectPage = () => {
     //Loading job using useEffect instead of react-router-dom loader
     // const [job, setJob] = useState(null);
     // const [loading, setLoading] = useState(true);
@@ -21,21 +22,7 @@ const ProjectPage = ({ deleteJob }) => {
     //     fetchJob();
     // }, [])
 
-    const { id } = useParams();
     const job = useLoaderData();
-
-    const navigate = useNavigate();
-
-    const onDeleteClick = (jobID) => {
-        const confirm = window.confirm('Are you sure you want to delete this listing?')
-
-        if (!confirm) {
-            return
-        }
-        deleteJob(jobID);
-
-        return navigate('/jobs');
-    }
 
     return (
         <>
@@ -43,9 +30,9 @@ const ProjectPage = ({ deleteJob }) => {
                 <div className="container m-auto py-6 px-6">
                     <Link
                         to="/jobs"
-                        className="text-indigo-500 hover:text-indigo-600 flex items-center"
+                        className="text-sky-900 hover:text-sky-600 flex items-center"
                     >
-                        <FaArrowLeft className='mr-2' /> Back to Job Listings
+                        <FaArrowLeft className='mr-2' /> Back to All Project
                     </Link>
                 </div>
             </section>
@@ -116,7 +103,7 @@ const ProjectPage = ({ deleteJob }) => {
     )
 }
 
-const jobLoader = async ({ params }) => {
+const projectLoader = async ({ params }) => {
     try {
         // Use Firebase SDK to fetch data from Realtime Database
         const snapshot = await firebase.database().ref(`projects/${params.id}`).once('value');
@@ -125,6 +112,7 @@ const jobLoader = async ({ params }) => {
         if (snapshot.exists()) {
             // Convert snapshot value to JSON
             const data = snapshot.val();
+            console.log(data);
             return data;
         } else {
             // Handle case where data does not exist
@@ -137,4 +125,4 @@ const jobLoader = async ({ params }) => {
     }
 }
 
-export { ProjectPage as default, jobLoader };
+export { ProjectPage as default, projectLoader };

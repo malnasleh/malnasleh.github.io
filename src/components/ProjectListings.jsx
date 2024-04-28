@@ -3,26 +3,41 @@ import { useEffect, useState } from 'react';
 import ProjectListing from './ProjectListing';
 import Spinner from './Spinner';
 import ViewAllProjects from './ViewAllProjects';
+import firebase from '../../firebaseConfig';
+
 
 const ProjectListings = ({ isHome = false }) => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
+
     useEffect(() => {
         const fetchProjects = async () => {
-            const apiURL = isHome ? '/api/projects?_limit=3' : '/api/projects'
             try {
-                const res = await fetch(apiURL);
-                const data = await res.json();
-                setProjects(data);
+                // Use Firebase SDK to fetch data from Realtime Database
+                const snapshot = await firebase.database().ref(`projects/`).once('value');
+
+                // Check if data exists
+                if (snapshot.exists()) {
+                    // Convert snapshot value to JSON
+                    const data = isHome ? snapshot.val().slice(0,3) : snapshot.val();
+                    console.log(data);
+                    setProjects(data);
+                } else {
+                    // Handle case where data does not exist
+                    console.error(`No projects were found`);
+                }
             } catch (error) {
-                console.log('Error fetching project data', error);
+                console.error('Error fetching project data:', error);
+                throw error; // Propagate error to the caller
             } finally {
                 setLoading(false);
             }
         }
         fetchProjects();
     }, []);
+
     const sectionClass = isHome ? "bg-orange-100 px-4 " : "bg-orange-100 px-4 pb-10"
     return (
         <section className={sectionClass}>
@@ -38,7 +53,7 @@ const ProjectListings = ({ isHome = false }) => {
                         ))}
                     </div>)}
             </div>
-            
+
             {isHome && <ViewAllProjects />}
         </section>
     )
