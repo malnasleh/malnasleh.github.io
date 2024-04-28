@@ -2,7 +2,7 @@ import React from 'react'
 import { useParams, useLoaderData, Link, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaMapMarker } from 'react-icons/fa';
 
-const ProjectPage = ({deleteJob}) => {
+const ProjectPage = ({ deleteJob }) => {
     //Loading job using useEffect instead of react-router-dom loader
     // const [job, setJob] = useState(null);
     // const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ const ProjectPage = ({deleteJob}) => {
     const onDeleteClick = (jobID) => {
         const confirm = window.confirm('Are you sure you want to delete this listing?')
 
-        if(!confirm){
+        if (!confirm) {
             return
         }
         deleteJob(jobID);
@@ -117,9 +117,24 @@ const ProjectPage = ({deleteJob}) => {
 }
 
 const jobLoader = async ({ params }) => {
-    const res = await fetch(`/api/projects/${params.id}`)
-    const data = await res.json();
-    return data
+    try {
+        // Use Firebase SDK to fetch data from Realtime Database
+        const snapshot = await firebase.database().ref(`projects/${params.id}`).once('value');
+
+        // Check if data exists
+        if (snapshot.exists()) {
+            // Convert snapshot value to JSON
+            const data = snapshot.val();
+            return data;
+        } else {
+            // Handle case where data does not exist
+            console.error(`Project with ID ${params.id} not found`);
+            return null; // Or throw an error
+        }
+    } catch (error) {
+        console.error('Error fetching project data:', error);
+        throw error; // Propagate error to the caller
+    }
 }
 
 export { ProjectPage as default, jobLoader };
