@@ -10,8 +10,6 @@ const ProjectListings = ({ isHome = false }) => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
 
-
-
     useEffect(() => {
         const fetchProjects = async () => {
             try {
@@ -42,7 +40,7 @@ const ProjectListings = ({ isHome = false }) => {
     return (
         <section className={sectionClass}>
             <div className="container-xl lg:container m-auto">
-                <h2 className="text-3xl font-bold text-sky-500 mb-6 text-center">
+                <h2 className="text-3xl font-bold text-sky-500 mb-4 text-center">
                     {isHome ? 'Recent Projects' : 'Browse Projects'}
                 </h2>
 

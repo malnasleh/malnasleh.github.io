@@ -8,7 +8,7 @@ const ContactInfo = () => {
     };
 
     return (
-        <div className='bg-orange-100 px-4 pb-4 w-auto' id='contact-card'>
+        <div className='bg-orange-100 p-4 w-auto' id='contact-card'>
             <Card bg='bg-warmBeige inline-block'>
                 <h2 className="text-2xl text-sky-700 font-bold">Contact Info</h2>
                 <p className="mt-2 text-sky-900 mb-4">
