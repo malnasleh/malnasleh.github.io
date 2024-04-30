@@ -48,7 +48,7 @@ const SkillsPage = () => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentSkill(skill)}
-                                className={` text-white hover:bg-sky-600 hover:text-white rounded-md p-1 ${currentSkill.title === skill.title ? 'font-bold bg-sky-600' : 'bg-sky-900'}`}>
+                                className={` text-white overflow-auto hover:bg-sky-600 hover:text-white rounded-md p-1 ${currentSkill.title === skill.title ? 'font-bold bg-sky-600' : 'bg-sky-900'}`}>
                                 {skill.title === 'C Sharp' ? 'C#' : skill.title}
                             </button>
                         ))}
