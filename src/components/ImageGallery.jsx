@@ -1,19 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const ImageGallery = ({ images }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isModalOpen, setModalOpen] = useState(false);
 
     const goToPrevImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
+        setCurrentImageIndex(prevIndex => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
     };
 
     const goToNextImage = () => {
-        setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+        setCurrentImageIndex(prevIndex => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    };
+
+    const openModal = index => {
+        console.log("Opening modal for index:", index); // Check if openModal is triggered
+        setCurrentImageIndex(index);
+        setModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setModalOpen(false);
     };
 
     return images ? (
         <div className="relative mt-4">
-            <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} className="block mx-auto" />
+            <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <img
+                    src={images[currentImageIndex]}
+                    alt={`Image ${currentImageIndex + 1}`}
+                    className="block mx-auto"
+                />
+            </Modal>
+            <img
+                src={images[currentImageIndex]}
+                alt={`Image ${currentImageIndex + 1}`}
+                className="block mx-auto cursor-pointer"
+                onClick={() => openModal(currentImageIndex)} // Ensure openModal is correctly invoked
+            />
             <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
                 <button onClick={goToPrevImage} className="bg-sky-700 bg-opacity-60 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded-full">
                     &lt;
@@ -25,7 +49,7 @@ const ImageGallery = ({ images }) => {
                 </button>
             </div>
         </div>
-    ) : <></>
-}
+    ) : <></>;
+};
 
-export default ImageGallery
+export default ImageGallery;

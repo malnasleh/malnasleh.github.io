@@ -39,7 +39,7 @@ const ProjectPage = () => {
                                     {project.description}
                                 </p>
 
-                                <h3 className="text-sky-700 text-lg font-bold">Features</h3>
+                                <h3 className="text-sky-700 text-xl font-bold">Features</h3>
                                 <ul className='divide-y divide-sky-600'>
                                     {features.map((feature) => {
                                         return (
@@ -68,9 +68,10 @@ const ProjectPage = () => {
                                 </ul>
                             </div>
                             <a
+                                target='_blank'
                                 href={project.codeLink}
                                 className="block mt-4 bg-sky-900 text-white text-center py-4 rounded-xl hover:bg-sky-600 hover:shadow-md hover:shadow-sky-900"
-                            ><FaGithub className='inline-block mr-3 mb-1 text-xl' />Go To Project Github</a>
+                            ><FaGithub className='inline-block mr-3 mb-1 text-xl ' />Go To Project Github</a>
                             <ImageGallery images={Object.values(project.images)}></ImageGallery>
                         </aside>
                     </div>

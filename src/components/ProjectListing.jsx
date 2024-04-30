@@ -1,9 +1,9 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { FaJava, FaPython, FaReact, } from 'react-icons/fa'
+import { FaJava, FaPython, FaReact } from 'react-icons/fa'
 import { DiDjango, DiHaskell } from 'react-icons/di'
-import { SiGodotengine } from 'react-icons/si'
+import { SiGodotengine, SiSqlite } from 'react-icons/si'
 
 const ProjectListing = ({ project }) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
@@ -18,6 +18,8 @@ const ProjectListing = ({ project }) => {
         react: FaReact,
         java: FaJava,
         python: FaPython,
+        django: DiDjango,
+        sqlite: SiSqlite
     };
 
     const renderSkillIcons = (projectSkills) => {
