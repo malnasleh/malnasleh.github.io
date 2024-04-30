@@ -8,7 +8,7 @@ const Navbar = () => {
     const location = useLocation();
 
     return (
-        <nav className="bg-warmBeige fixed w-full z-50 border-b border-sky-900">
+        <nav className="bg-warmBeige fixed w-full z-50 border-b border-sky-900 overflow-x-auto">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <div
@@ -26,7 +26,7 @@ const Navbar = () => {
                                 <NavLink
                                     to="/"
                                     className={(location.pathname === "/" && location.hash === "") ? 'bg-sky-900 text-white hover:bg-sky-600 hover:text-white rounded-md px-3 py-2' : 'text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'}
-                                   >
+                                >
                                     Home
                                 </NavLink>
                                 <NavLink
@@ -40,12 +40,12 @@ const Navbar = () => {
                                 <NavLink
                                     to='/#contact-card'
                                     className={(location.pathname === "/" && location.hash === "#contact-card") ? 'bg-sky-900 text-white hover:bg-sky-600 hover:text-white rounded-md px-3 py-2' : 'text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'}
-                                    >
+                                >
                                     Contact
                                 </NavLink >
-                                <a href='/Resume.pdf' 
-                                target="_blank" 
-                                className='text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'>
+                                <a href='/Resume.pdf'
+                                    target="_blank"
+                                    className='text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'>
                                     Resume
                                 </a>
                             </div>
