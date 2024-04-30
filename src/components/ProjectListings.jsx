@@ -36,11 +36,11 @@ const ProjectListings = ({ isHome = false }) => {
         fetchProjects();
     }, []);
 
-    const sectionClass = isHome ? "bg-orange-100 px-4 " : "bg-orange-100 px-4 pb-10"
+    const sectionClass = isHome ? "bg-orange-100 px-4" : "bg-orange-100 px-4 pb-10 h-screen"
     return (
         <section className={sectionClass}>
             <div className="container-xl lg:container m-auto">
-                <h2 className="text-3xl font-bold text-sky-500 mb-4 text-center">
+                <h2 className="text-3xl font-bold text-sky-500 mb-3 text-center">
                     {isHome ? 'Recent Projects' : 'Browse Projects'}
                 </h2>
 
@@ -51,7 +51,6 @@ const ProjectListings = ({ isHome = false }) => {
                         ))}
                     </div>)}
             </div>
-
             {isHome && <ViewAllProjects />}
         </section>
     )

@@ -35,15 +35,12 @@ const Experience = () => {
 
   return (
     <>
-      <h2 className='text-center text-3xl font-bold text-sky-500 mb-4'>Work Experience</h2>
-      <div className="grid grid-cols-2 gap-4 p-6">
+      <h2 className='text-center text-3xl font-bold text-sky-500 pt-6'>Work Experience</h2>
+      <div className="grid grid-cols-2 gap-4 px-6 pb-6 pt-2">
         {experiences.map((experience, index) => (
           <WorkExperienceCard
             key={index}
-            title={experience.title}
-            company={experience.companyName}
-            location={experience.location}
-            descriptions={Object.values(experience.descriptions)}
+            experience={experience}
           />
         ))}
       </div>

@@ -13,7 +13,7 @@ export default {
         '70/30': '70% 28%',
       },
       colors: {
-        warmBeige: '#F5EFE6'
+        warmBeige: '#FAF3EB'
       },
       backgroundImage: {
         'hero-background': "url('/src/assets/Images/hero-bg.jpeg')",

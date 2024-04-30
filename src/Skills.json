@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Agile Development",
+    "percent": 80
+  },
+  {
+    "title": "C",
+    "percent": 95
+  },
+  {
+    "title": "C Sharp",
+    "percent": 100
+  },
+  {
+    "title": "C++",
+    "percent": 90
+  },
+  {
+    "title": "Distributed Systems",
+    "percent": 85
+  },
+  {
+    "title": "Django",
+    "percent": 40
+  },
+  {
+    "title": "Git",
+    "percent": 100
+  },
+  {
+    "title": "Java",
+    "percent": 100
+  },
+  {
+    "title": "JavaScript",
+    "percent": 70
+  },
+  {
+    "title": "Net",
+    "percent": 75
+  },
+  {
+    "title": "Networks",
+    "percent": 55
+  },
+  {
+    "title": "Python",
+    "percent": 90
+  },
+  {
+    "title": "React",
+    "percent": 65
+  },
+  {
+    "title": "SQL",
+    "percent": 85
+  },
+  {
+    "title": "UML",
+    "percent": 80
+  },
+  {
+    "title": "Unit Testing",
+    "percent": 100
+  }
+]
