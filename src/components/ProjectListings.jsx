@@ -19,7 +19,7 @@ const ProjectListings = ({ isHome = false }) => {
                 // Check if data exists
                 if (snapshot.exists()) {
                     // Convert snapshot value to JSON
-                    const data = isHome ? snapshot.val().slice(0,3) : snapshot.val();
+                    const data = isHome ? snapshot.val().slice(0, 3) : snapshot.val();
                     console.log(data);
                     setProjects(data);
                 } else {
@@ -36,9 +36,9 @@ const ProjectListings = ({ isHome = false }) => {
         fetchProjects();
     }, []);
 
-    const sectionClass = isHome ? "bg-orange-100 px-4" : "bg-orange-100 px-4 pb-10 h-screen"
+
     return (
-        <section className={sectionClass}>
+        <>
             <div className="container-xl lg:container m-auto">
                 <h2 className="text-3xl font-bold text-sky-500 mb-3 text-center">
                     {isHome ? 'Recent Projects' : 'Browse Projects'}
@@ -52,7 +52,7 @@ const ProjectListings = ({ isHome = false }) => {
                     </div>)}
             </div>
             {isHome && <ViewAllProjects />}
-        </section>
+        </>
     )
 }
 
