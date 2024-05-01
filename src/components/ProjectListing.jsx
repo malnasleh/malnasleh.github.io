@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaJava, FaPython, FaReact } from 'react-icons/fa'
 import { DiDjango, DiHaskell } from 'react-icons/di'
-import { SiGodotengine, SiSqlite } from 'react-icons/si'
+import { SiGodotengine, SiSqlite, SiDotnet, SiCsharp } from 'react-icons/si'
 
 const ProjectListing = ({ project }) => {
     const [showFullDescription, setShowFullDescription] = useState(false);
@@ -19,12 +19,13 @@ const ProjectListing = ({ project }) => {
         java: FaJava,
         python: FaPython,
         django: DiDjango,
-        sqlite: SiSqlite
+        sqlite: SiSqlite,
+        ".net": SiDotnet,
+        "c#": SiCsharp
     };
 
     const renderSkillIcons = (projectSkills) => {
         return projectSkills.map((skill, index) => {
-            console.log(skill);
             const IconComponent = skillIconMap[skill.toLowerCase()];
             if (!IconComponent) return null; // If no icon found for the skill
             return <IconComponent key={index} title={skill} className="inline-block mb-1 text-sky-950 w-8 h-8 mr-2" />;

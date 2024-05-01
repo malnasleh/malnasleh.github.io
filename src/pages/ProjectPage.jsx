@@ -67,12 +67,12 @@ const ProjectPage = () => {
                                     })}
                                 </ul>
                             </div>
-                            <a
+                            {project.codeLink && <a
                                 target='_blank'
                                 href={project.codeLink}
                                 className="block mt-4 bg-sky-900 text-white text-center py-4 rounded-xl hover:bg-sky-600 hover:shadow-md hover:shadow-sky-900"
-                            ><FaGithub className='inline-block mr-3 mb-1 text-xl ' />Go To Project Github</a>
-                            <ImageGallery images={Object.values(project.images)}></ImageGallery>
+                            ><FaGithub className='inline-block mr-3 mb-1 text-xl ' />Go To Project Github</a>}
+                            {project.images && <ImageGallery images={Object.values(project.images)}></ImageGallery> }
                         </aside>
                     </div>
                 </div >
