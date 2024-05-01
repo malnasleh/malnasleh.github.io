@@ -39,12 +39,12 @@ const ImageGallery = ({ images }) => {
                 onClick={() => openModal(currentImageIndex)} // Ensure openModal is correctly invoked
             />
             <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
-                <button onClick={goToPrevImage} className="bg-sky-700 bg-opacity-60 hover:bg-sky-500 text-white font-bold py-2 px-4 rounded-full">
+                <button onClick={goToPrevImage} className="bg-sky-700 bg-opacity-60 hover:bg-sky-500 text-white font-bold py-2 px-4 ml-1 rounded-full">
                     &lt;
                 </button>
             </div>
             <div className="absolute top-1/2 right-0 transform -translate-y-1/2">
-                <button onClick={goToNextImage} className="bg-sky-700 hover:bg-sky-500 bg-opacity-60 text-white font-bold py-2 px-4 rounded-full">
+                <button onClick={goToNextImage} className="bg-sky-700 hover:bg-sky-500 bg-opacity-60 text-white font-bold py-2 px-4 mr-1 rounded-full">
                     &gt;
                 </button>
             </div>

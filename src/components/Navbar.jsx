@@ -3,7 +3,7 @@ import logo from '../assets/Images/logo.png'
 import { NavLink, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
-    const linkClass = ({ isActive }) => isActive ? 'bg-sky-900 text-white hover:bg-sky-600 hover:text-white rounded-md px-3 py-2' : 'text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'
+    const linkClass = ({ isActive }) => isActive ? ' bg-tyrianPurple hover:shadow-md hover:shadow-tyrianPurple hover:bg-lightTyrianPurple  text-white rounded-md px-3 py-2' : 'text-tyrianPurple hover:bg-lightTyrianPurple hover:text-white hover:shadow-md hover:shadow-tyrianPurple rounded-md px-3 py-2'
 
     const location = useLocation();
 
@@ -25,7 +25,7 @@ const Navbar = () => {
                             <div className="flex space-x-2">
                                 <NavLink
                                     to="/"
-                                    className={(location.pathname === "/" && location.hash === "") ? 'bg-sky-900 text-white hover:bg-sky-600 hover:text-white rounded-md px-3 py-2' : 'text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'}
+                                    className={(location.pathname === "/" && location.hash === "") ? ' bg-tyrianPurple hover:shadow-md hover:shadow-tyrianPurple hover:bg-lightTyrianPurple  text-white rounded-md px-3 py-2' : 'text-tyrianPurple hover:bg-lightTyrianPurple hover:text-white hover:shadow-md hover:shadow-tyrianPurple rounded-md px-3 py-2'}
                                 >
                                     Home
                                 </NavLink>
@@ -39,13 +39,13 @@ const Navbar = () => {
                                 >Skills</NavLink >
                                 <NavLink
                                     to='/#contact-card'
-                                    className={(location.pathname === "/" && location.hash === "#contact-card") ? 'bg-sky-900 text-white hover:bg-sky-600 hover:text-white rounded-md px-3 py-2' : 'text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'}
+                                    className={(location.pathname === "/" && location.hash === "#contact-card") ? ' bg-tyrianPurple hover:shadow-md hover:shadow-tyrianPurple hover:bg-lightTyrianPurple  text-white rounded-md px-3 py-2' : 'text-tyrianPurple hover:bg-lightTyrianPurple hover:text-white hover:shadow-md hover:shadow-tyrianPurple rounded-md px-3 py-2'}
                                 >
                                     Contact
                                 </NavLink >
                                 <a href='/Resume.pdf'
                                     target="_blank"
-                                    className='text-sky-900 hover:bg-sky-600 hover:text-white rounded-md px-3 py-2'>
+                                    className='text-tyrianPurple hover:bg-lightTyrianPurple hover:text-white hover:shadow-md hover:shadow-tyrianPurple rounded-md px-3 py-2'>
                                     Resume
                                 </a>
                             </div>

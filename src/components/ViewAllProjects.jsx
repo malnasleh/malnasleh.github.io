@@ -6,7 +6,7 @@ const ViewAllProjects = () => {
     <section className="m-auto max-w-lg my-10 px-6">
         <Link
           to="/projects"
-          className="block bg-sky-900 text-white text-center py-4 px-6 rounded-xl hover:bg-sky-600 hover:shadow-md hover:shadow-sky-900"
+          className="block bg-tyrianPurple text-white text-center py-4 px-6 rounded-xl hover:bg-lightTyrianPurple hover:shadow-md hover:shadow-tyrianPurple"
         >View All Projects</Link
         >
       </section>

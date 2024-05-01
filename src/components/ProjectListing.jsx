@@ -42,7 +42,7 @@ const ProjectListing = ({ project }) => {
                     {description}
                 </div>
 
-                <button onClick={() => setShowFullDescription((prevState) => prevState = !prevState)} className="text-sky-700 mb-5 hover:text-sky-500">
+                <button onClick={() => setShowFullDescription((prevState) => prevState = !prevState)} className=" text-sky-700 hover:text-sky-500 mb-5 ">
                     {showFullDescription ? 'Less' : 'More'}
                 </button>
 
@@ -55,7 +55,7 @@ const ProjectListing = ({ project }) => {
                 <div className="flex flex-col lg:flex-row justify-center mb-4">
                     <Link
                         to={`/projects/${project.id}`}
-                        className="h-[36px] bg-sky-900 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
+                        className="h-[36px] bg-tyrianPurple hover:bg-lightTyrianPurple hover:shadow-md hover:shadow-tyrianPurple  text-white px-4 py-2 rounded-lg text-center text-sm">
                         Read More
                     </Link>
                 </div>
