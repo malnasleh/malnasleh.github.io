@@ -21,7 +21,8 @@ const ProjectListing = ({ project }) => {
         django: DiDjango,
         sqlite: SiSqlite,
         ".net": SiDotnet,
-        "c#": SiCsharp
+        "c#": SiCsharp,
+        godot: SiGodotengine,
     };
 
     const renderSkillIcons = (projectSkills) => {
