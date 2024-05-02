@@ -37,7 +37,7 @@ const ProjectListings = ({ isHome = false }) => {
     }, []);
 
     return (
-        <section className="bg-orange-100 px-4 pb-10">
+        <section className="bg-orange-100 px-20 pb-10">
             <div className="container-xl lg:container m-auto">
                 <h2 className="text-3xl font-bold text-sky-500 mb-3 text-center">
                     {isHome ? 'Recent Projects' : 'Browse Projects'}
