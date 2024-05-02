@@ -56,7 +56,7 @@ const ProjectListing = ({ project }) => {
                 <div className="flex flex-col lg:flex-row justify-center mb-4">
                     <Link
                         to={`/projects/${project.id}`}
-                        className="h-[36px] bg-sky-900 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm">
+                        className="h-[36px] bg-sky-900 hover:bg-sky-600 text-white px-4 py-2 rounded-lg text-center text-sm hover:shadow-md hover:shadow-sky-900">
                         Read More
                     </Link>
                 </div>

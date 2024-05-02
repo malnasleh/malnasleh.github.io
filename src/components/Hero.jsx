@@ -4,7 +4,7 @@ const Hero = ({title = 'Welcome,', subtitle = 'A backend focused full stack deve
     return (
         <section className="bg-orange-100 pt-20 pb-4 ">
             <div
-                className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 "
+                className="max-w-7xl px-4 sm:px-6 lg:px-8 "
             >
                 <div className="text-left">
                     <h1
